@@ -1,0 +1,57 @@
+<%-include('partials/header')%>
+<div id="logreg-forms">
+  <form class="form-signin" action="/login" method="post">
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
+      Sign in
+    </h1>
+    <!-- <div class="social-login">
+        <button class="btn facebook-btn social-btn" type="button">
+          <span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span>
+        </button>
+        <button class="btn google-btn social-btn" type="button">
+          <span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span>
+        </button>
+      </div> -->
+    <!-- <p style="text-align: center">OR</p> -->
+    <input
+      type="text"
+      id="inputEmail-Username"
+      name="username"
+      class="form-control"
+      placeholder="Enter Username or email"
+      required=""
+      autofocus=""
+    />
+    <br />
+    <input
+      type="password"
+      name="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Password"
+      required=""
+    />
+    <button class="btn btn-success btn-block" type="submit">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </button>
+    <a href="/resetPassword" id="forgot_pswd">Forgot password?</a>
+    <hr />
+    <!-- <p>Don't have an account!</p>  -->
+    <button
+      class="btn btn-primary btn-block"
+      type="button"
+      id="btn-signup"
+      onclick="window.location.href='/signup'"
+    >
+      <i class="fas fa-user-plus"></i> Sign up New Account
+    </button>
+  </form>
+</div>
+<script>
+  var error = "<%= errorMessage%>";
+  if (error.length != 0) {
+    //document.getElementById("resetEmail").innerHTML = error;
+    alert(error);
+  }
+</script>
+<%-include('partials/footer')%>

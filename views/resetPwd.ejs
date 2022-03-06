@@ -1,0 +1,29 @@
+<%-include('partials/header')%>
+<div id="logreg-forms">
+  <form action="/resetPassword" class="form-reset" method="post">
+    <input
+      type="email"
+      id="resetEmail"
+      name="email"
+      class="form-control"
+      placeholder="Email address"
+      required=""
+      autofocus=""
+    />
+
+    <button class="btn btn-primary btn-block" type="submit">
+      Reset Password
+    </button>
+    <a href="/login" id="cancel_reset"
+      ><i class="fas fa-angle-left"></i> Back</a
+    >
+  </form>
+</div>
+<script>
+  var error = "<%= errorMessage%>";
+  if (error.length != 0) {
+    //document.getElementById("resetEmail").innerHTML = error;
+    alert(error);
+  }
+</script>
+<%-include('partials/footer')%>
